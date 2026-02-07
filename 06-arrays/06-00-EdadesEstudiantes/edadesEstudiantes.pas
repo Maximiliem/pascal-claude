@@ -19,7 +19,7 @@ writeln('Ingresa 5 números:');
 }
 
 begin
-    writeln('Ingrese 5 edades, una por una. Las edades corresponden a 5 estudiantes.');
+    writeln('Ingrese ', CANTIDAD_ESTUDIANTES, ' edades, una por una. Las edades corresponden a ', CANTIDAD_ESTUDIANTES, ' estudiantes.');
     for i := 1 to CANTIDAD_ESTUDIANTES do
     begin
         write('Estudiante ', i, ': ');
