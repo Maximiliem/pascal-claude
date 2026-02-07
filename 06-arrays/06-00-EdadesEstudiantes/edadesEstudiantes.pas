@@ -1,7 +1,10 @@
 program EdadesEstudiantes (input, output);
 
+const
+    CANTIDAD_ESTUDIANTES = 5;
+
 var
-    edades: array[1..5] of integer;
+    edades: array[1..CANTIDAD_ESTUDIANTES] of integer;
     i, suma : integer;
     promedio : real;
 
@@ -17,7 +20,7 @@ writeln('Ingresa 5 números:');
 
 begin
     writeln('Ingrese 5 edades, una por una. Las edades corresponden a 5 estudiantes.');
-    for i := 1 to 5 do
+    for i := 1 to CANTIDAD_ESTUDIANTES do
     begin
         write('Estudiante ', i, ': ');
         readln(edades[i]);
@@ -25,9 +28,9 @@ begin
 
 {Acá iría el cálculo del promedio de las edades.}
 suma := 0;
-for i := 1 to 5 do
+for i := 1 to CANTIDAD_ESTUDIANTES do
     suma := suma + edades[i];
-promedio := suma / 5;
+promedio := suma / CANTIDAD_ESTUDIANTES;
 
 {
 writeln('Los números ingresados fueron:');
@@ -36,7 +39,7 @@ writeln('Los números ingresados fueron:');
 }
 
 writeln('Edades almacenadas:');
-    for i:= 1 to 5 do
+    for i:= 1 to CANTIDAD_ESTUDIANTES do
         writeln('Posición ', i, ': ', edades[i], ' años.');
 
 writeln('Promedio de edades: ', promedio:0:2); //NOTE - la notación variable:0:2 es para mostrar dos decimales después de la coma.
