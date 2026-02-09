@@ -64,3 +64,38 @@ Pero esto es opcional. Podés simplemente mostrar el número del mes.
 
 }
 
+program TemperaturasAnuales;
+uses crt;
+
+const
+  CANT_MESES = 12;
+  MIN_TEMP = -50.0;
+  MAX_TEMP = 50.0;
+
+type
+  Meses = 1..CANT_MESES;
+  Temperaturas = array[Meses] of real;
+
+var
+  temperaturas : Temperaturas;
+  i, mesCaluroso, mesFrio : integer;
+  temp, promedio, maxTemp, minTemp : real;
+
+begin
+
+  writeln('REGISTRO DE TEMPERATURAS MENSUALES');
+  writeln('==================================');
+
+  // [TU CÓDIGO AQUÍ: Ingreso con validación]
+  
+  
+  // [TU CÓDIGO AQUÍ: Inicialización de máximo y mínimo]
+  
+  // [TU CÓDIGO AQUÍ: Cálculo de promedio y búsqueda de extremos]
+  // RECUERDA: Puedes hacerlo en uno o dos bucles según prefieras
+  
+  // [TU CÓDIGO AQUÍ: Contar meses sobre el promedio]
+  
+  // [TU CÓDIGO AQUÍ: Mostrar resultados]
+
+end.
