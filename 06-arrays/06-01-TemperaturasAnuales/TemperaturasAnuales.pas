@@ -73,12 +73,12 @@ const
   MAX_TEMP = 50.0;
 
 type
-  Meses = 1..CANT_MESES;
-  Temperaturas = array[Meses] of real;
+  TMeses = 1..CANT_MESES;
+  TTemperaturas = array[TMeses] of real;
 
 var
-  temperaturas : Temperaturas;
-  i, mesCaluroso, mesFrio : integer;
+  temperaturas : TTemperaturas; //Acá se almacenan todas las temperaturas y luego lo usamos para calcular el promedio dividido CANT_MESES.
+  i, mesCaluroso, mesFrio : integer; //mesCaluroso y mesFrio van a almacenar los meses con mayor y menor temperatura de todos.
   temp, promedio, maxTemp, minTemp : real;
 
 begin
@@ -86,8 +86,19 @@ begin
   writeln('REGISTRO DE TEMPERATURAS MENSUALES');
   writeln('==================================');
 
+  i := 1;
   // [TU CÓDIGO AQUÍ: Ingreso con validación]
-  
+  for i := 1 to CANT_MESES do
+    repeat 
+    
+      write('Ingrese la temperatura del mes ', i, ':');
+      readln(temperaturas[i]);
+      if (temperaturas[i] > MAX_TEMP) or (temperaturas[i] < MIN_TEMP) then
+        writeln('Por favor ingrese una teperatura válida quentre 50ºC y -50ºC')
+    
+    until (temperaturas[i] <= MAX_TEMP) and (temperaturas[i] >= MIN_TEMP);
+    
+    
   
   // [TU CÓDIGO AQUÍ: Inicialización de máximo y mínimo]
   
