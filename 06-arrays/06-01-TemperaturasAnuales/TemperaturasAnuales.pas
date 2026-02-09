@@ -98,10 +98,20 @@ begin
     
     until (temperaturas[i] <= MAX_TEMP) and (temperaturas[i] >= MIN_TEMP);
     
-    
   
   // [TU CÓDIGO AQUÍ: Inicialización de máximo y mínimo]
+  maxTemp := temperaturas[1];
+  mesCaluroso := 1;
+
+  for i := 2 to CANT_MESES do
+    if temperaturas[i] > maxTemp then
+    begin
+        maxTemp := temperaturas[i];
+        mesCaluroso := i;
+    end;
   
+writeln('El mes más caluroso fue el mes ', mesCaluroso, ' con ', maxTemp:0:2, ' grados.');
+
   // [TU CÓDIGO AQUÍ: Cálculo de promedio y búsqueda de extremos]
   // RECUERDA: Puedes hacerlo en uno o dos bucles según prefieras
   
