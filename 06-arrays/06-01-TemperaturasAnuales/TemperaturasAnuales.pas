@@ -86,37 +86,36 @@ begin
   writeln('REGISTRO DE TEMPERATURAS MENSUALES');
   writeln('==================================');
 
-  i := 1;
-  // [TU CÓDIGO AQUÍ: Ingreso con validación]
   for i := 1 to CANT_MESES do
     repeat 
     
       write('Ingrese la temperatura del mes ', i, ':');
       readln(temperaturas[i]);
       if (temperaturas[i] > MAX_TEMP) or (temperaturas[i] < MIN_TEMP) then
-        writeln('Por favor ingrese una teperatura válida quentre 50ºC y -50ºC')
+        writeln('Por favor ingrese una teperatura válida entre 50ºC y -50ºC')
     
     until (temperaturas[i] <= MAX_TEMP) and (temperaturas[i] >= MIN_TEMP);
     
   
-  // [TU CÓDIGO AQUÍ: Inicialización de máximo y mínimo]
   maxTemp := temperaturas[1];
+  minTemp := temperaturas[1];
   mesCaluroso := 1;
+  mesFrio := 1;
 
   for i := 2 to CANT_MESES do
     if temperaturas[i] > maxTemp then
     begin
         maxTemp := temperaturas[i];
         mesCaluroso := i;
-    end;
+    end
+    else if temperaturas[i] < minTemp then
+      begin
+        minTemp := temperaturas[i];
+        mesFrio := i;
+      end;
+
   
 writeln('El mes más caluroso fue el mes ', mesCaluroso, ' con ', maxTemp:0:2, ' grados.');
-
-  // [TU CÓDIGO AQUÍ: Cálculo de promedio y búsqueda de extremos]
-  // RECUERDA: Puedes hacerlo en uno o dos bucles según prefieras
-  
-  // [TU CÓDIGO AQUÍ: Contar meses sobre el promedio]
-  
-  // [TU CÓDIGO AQUÍ: Mostrar resultados]
+writeln('El mes más frio fue el mes ', mesFrio, ' con ', minTemp:0:2, ' grados.');
 
 end.
